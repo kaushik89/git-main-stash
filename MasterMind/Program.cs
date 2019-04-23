@@ -10,7 +10,6 @@ namespace MasterMind
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("-------------Welcome to MasterMind-------------------------");
             string quit = string.Empty;
             while (!quit.Equals("Q", StringComparison.OrdinalIgnoreCase))
@@ -93,18 +92,10 @@ namespace MasterMind
             var random = new Random();
 
             int i = 0;
-            char generatedChar;
             while (i < stringChars.Length)
             {
-                generatedChar = chars[random.Next(chars.Length)];
-                while (stringChars.Contains(generatedChar))
-                {
-                    generatedChar = chars[random.Next(chars.Length)];
-                }
-
-                stringChars[i] = generatedChar;
+                stringChars[i] = chars[random.Next(chars.Length)];
                 i++;
-
             }
 
             return new String(stringChars);
